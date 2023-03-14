@@ -1,4 +1,4 @@
-function Navbar (props) {
+const Navbar = (props) => {
 
     return (
 
@@ -9,6 +9,7 @@ function Navbar (props) {
                     <li> <a href="#"> Contact </a> </li>
                     {/* ambil parameter */}
                     <li> <a href="#"> {props.test} </a> </li>
+                    <li> <a href="#"> {!props.newValue ? "myText" : props.newValue} </a> </li>
                 </ul>
                 
         </div>
