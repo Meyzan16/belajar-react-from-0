@@ -10,7 +10,8 @@ class ClassComponents extends React.Component
 
     render () {
         return (
-            <div><h1>
+            <div>
+                <h1>
                 testing ClassComponents {this.props.paragraf()}
                 </h1>
             </div>

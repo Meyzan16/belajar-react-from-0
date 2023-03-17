@@ -1,6 +1,6 @@
 
 // beljar state
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 // end state
 
 import Intro from './components/Intro';
@@ -12,6 +12,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
+import { useRef } from 'react';
 
 // belajar route
 import { BrowserRouter as  Router, Routes , Route } from 'react-router-dom';
@@ -28,7 +29,7 @@ function App() {
     return (
         <div>
           <i>ini tulisan miring</i>
-          <marquee>ini tulisan berjalan</marquee>
+          {/* <marquee>ini tulisan berjalan</marquee> */}
         </div>
     );
   }
@@ -40,7 +41,29 @@ function App() {
     // console.log("button di click");
     setNavbarvalue("myBlog");
   }
-  // 
+
+  const [pacarasaya, setPacarSaya] = useState(1);
+  const [namaPacar, setnamaPacar] = useState("");
+  
+  // HOOKS
+  useEffect(() => {
+    if(pacarasaya > 1) {
+      setnamaPacar("Jodi")
+    }else{
+      setnamaPacar("uhuy")
+    }
+  },[pacarasaya])
+
+  const linkref = useRef(null)
+
+  // ref adalah paramter linkref.current
+  const scrollbawah = (ref) => {
+      window.scrollTo({
+        top: ref.offsetTop,
+        left: 0,
+        behavior: 'smooth'
+      })
+  }
 
   return (
     <>
@@ -65,7 +88,7 @@ function App() {
 
         <Router>
           <Routes>
-              <Route path="/" element={<Home/>} />
+              <Route path="/" element={<Home/>}  />
               <Route path="/about" element={<About/>}/>
               <Route path="*" element={<NotFound/>}/>
 
@@ -73,7 +96,126 @@ function App() {
 
           </Routes>
         </Router>
+        <button onClick={() => scrollbawah(linkref.current)}>klik use ref</button>
 
+        {/* arrow function () => */}
+        <h5>nama pacar : {namaPacar}</h5>
+        <h1>saya memilik pacar : {pacarasaya} pacara</h1>
+        <button onClick={() => setPacarSaya((prev) => prev + 1)} >tambah pacar </button>
+        <button onClick={() => setPacarSaya((prev) => prev - 1)} >kurang ppacar </button>
+
+        <br></br>
+        
+      
+
+        <p>lorem100
+          sadugsaidugsaiudgisaugd isugds
+          ad agf sd giosdgf 
+          gisd f
+          psd gfpidsgf pisdg fipgsd fgids gfi dsofg odsugfd
+          fdfgdsogf osd gufosudgf ugf ousd gf ousdgf dos
+          gfodsgfo udsgf ousdgfdgfitsdgfbytsdgfbuysgdf uy gdsuyfgadbftdft 8dagftb8atf87abtf8t7lorem100
+          sadugsaidugsaiudgisaugd isugds
+          ad agf sd giosdgf 
+          gisd f
+          psd gfpidsgf pisdg fipgsd fgids gfi dsofg odsugfd
+          fdfgdsogf osd gufosudgf ugf ousd gf ousdgf dos
+          gfodsgfo udsgf ousdgfdgfitsdgfbytsdgfbuysgdf uy gdsuyfgadbftdft 8dagftb8atf87abtf8t7
+          lorem100
+          sadugsaidugsaiudgisaugd isugds
+          ad agf sd giosdgf 
+          gisd f
+          psd gfpidsgf pisdg fipgsd fgids gfi dsofg odsugfd
+          fdfgdsogf osd gufosudgf ugf ousd gf ousdgf dos
+          gfodsgfo udsgf ousdgfdgfitsdgfbytsdgfbuysgdf uy gdsuyfgadbftdft 8dagftb8atf87abtf8t7lorem100
+          sadugsaidugsaiudgisaugd isugds
+          ad agf sd giosdgf 
+          gisd f
+          psd gfpidsgf pisdg fipgsd fgids gfi dsofg odsugfd
+          fdfgdsogf osd gufosudgf ugf ousd gf ousdgf dos
+          gfodsgfo udsgf ousdgfdgfitsdgfbytsdgfbuysgdf uy gdsuyfgadbftdft 8dagftb8atf87abtf8t7lorem100
+          sadugsaidugsaiudgisaugd isugds
+          ad agf sd giosdgf 
+          gisd f
+          psd gfpidsgf pisdg fipgsd fgids gfi dsofg odsugfd
+          fdfgdsogf osd gufosudgf ugf ousd gf ousdgf dos
+          gfodsgfo udsgf ousdgfdgfitsdgfbytsdgfbuysgdf uy gdsuyfgadbftdft 8dagftb8atf87abtf8t7lorem100
+          sadugsaidugsaiudgisaugd isugds
+          ad agf sd giosdgf 
+          gisd f
+          psd gfpidsgf pisdg fipgsd fgids gfi dsofg odsugfd
+          fdfgdsogf osd gufosudgf ugf ousd gf ousdgf dos
+          gfodsgfo udsgf ousdgfdgfitsdgfbytsdgfbuysgdf uy gdsuyfgadbftdft 8dagftb8atf87abtf8t7lorem100
+          sadugsaidugsaiudgisaugd isugds
+          ad agf sd giosdgf 
+          gisd f
+          psd gfpidsgf pisdg fipgsd fgids gfi dsofg odsugfd
+          fdfgdsogf osd gufosudgf ugf ousd gf ousdgf dos
+          gfodsgfo udsgf ousdgfdgfitsdgfbytsdgfbuysgdf uy gdsuyfgadbftdft 8dagftb8atf87abtf8t7lorem100
+          sadugsaidugsaiudgisaugd isugds
+          ad agf sd giosdgf 
+          gisd f
+          psd gfpidsgf pisdg fipgsd fgids gfi dsofg odsugfd
+          fdfgdsogf osd gufosudgf ugf ousd gf ousdgf dos
+          gfodsgfo udsgf ousdgfdgfitsdgfbytsdgfbuysgdf uy gdsuyfgadbftdft 8dagftb8atf87abtf8t7lorem100
+          sadugsaidugsaiudgisaugd isugds
+          ad agf sd giosdgf 
+          gisd f
+          psd gfpidsgf pisdg fipgsd fgids gfi dsofg odsugfd
+          fdfgdsogf osd gufosudgf ugf ousd gf ousdgf dos
+          gfodsgfo udsgf ousdgfdgfitsdgfbytsdgfbuysgdf uy gdsuyfgadbftdft 8dagftb8atf87abtf8t7lorem100
+          sadugsaidugsaiudgisaugd isugds
+          ad agf sd giosdgf 
+          gisd f
+          psd gfpidsgf pisdg fipgsd fgids gfi dsofg odsugfd
+          fdfgdsogf osd gufosudgf ugf ousd gf ousdgf dos
+          gfodsgfo udsgf ousdgfdgfitsdgfbytsdgfbuysgdf uy gdsuyfgadbftdft 8dagftb8atf87abtf8t7lorem100
+          sadugsaidugsaiudgisaugd isugds
+          ad agf sd giosdgf 
+          gisd f
+          psd gfpidsgf pisdg fipgsd fgids gfi dsofg odsugfd
+          fdfgdsogf osd gufosudgf ugf ousd gf ousdgf dos
+          gfodsgfo udsgf ousdgfdgfitsdgfbytsdgfbuysgdf uy gdsuyfgadbftdft 8dagftb8atf87abtf8t7lorem100
+          sadugsaidugsaiudgisaugd isugds
+          ad agf sd giosdgf 
+          gisd f
+          psd gfpidsgf pisdg fipgsd fgids gfi dsofg odsugfd
+          fdfgdsogf osd gufosudgf ugf ousd gf ousdgf dos
+          gfodsgfo udsgf ousdgfdgfitsdgfbytsdgfbuysgdf uy gdsuyfgadbftdft 8dagftb8atf87abtf8t7lorem100
+          sadugsaidugsaiudgisaugd isugds
+          ad agf sd giosdgf 
+          gisd f
+          psd gfpidsgf pisdg fipgsd fgids gfi dsofg odsugfd
+          fdfgdsogf osd gufosudgf ugf ousd gf ousdgf dos
+          gfodsgfo udsgf ousdgfdgfitsdgfbytsdgfbuysgdf uy gdsuyfgadbftdft 8dagftb8atf87abtf8t7lorem100
+          sadugsaidugsaiudgisaugd isugds
+          ad agf sd giosdgf 
+          gisd f
+          psd gfpidsgf pisdg fipgsd fgids gfi dsofg odsugfd
+          fdfgdsogf osd gufosudgf ugf ousd gf ousdgf dos
+          gfodsgfo udsgf ousdgfdgfitsdgfbytsdgfbuysgdf uy gdsuyfgadbftdft 8dagftb8atf87abtf8t7lorem100
+          sadugsaidugsaiudgisaugd isugds
+          ad agf sd giosdgf 
+          gisd f
+          psd gfpidsgf pisdg fipgsd fgids gfi dsofg odsugfd
+          fdfgdsogf osd gufosudgf ugf ousd gf ousdgf dos
+          gfodsgfo udsgf ousdgfdgfitsdgfbytsdgfbuysgdf uy gdsuyfgadbftdft 8dagftb8atf87abtf8t7lorem100
+          sadugsaidugsaiudgisaugd isugds
+          ad agf sd giosdgf 
+          gisd f
+          psd gfpidsgf pisdg fipgsd fgids gfi dsofg odsugfd
+          fdfgdsogf osd gufosudgf ugf ousd gf ousdgf dos
+          gfodsgfo udsgf ousdgfdgfitsdgfbytsdgfbuysgdf uy gdsuyfgadbftdft 8dagftb8atf87abtf8t7lorem100
+          sadugsaidugsaiudgisaugd isugds
+          ad agf sd giosdgf 
+          gisd f
+          psd gfpidsgf pisdg fipgsd fgids gfi dsofg odsugfd
+          fdfgdsogf osd gufosudgf ugf ousd gf ousdgf dos
+          gfodsgfo udsgf ousdgfdgfitsdgfbytsdgfbuysgdf uy gdsuyfgadbftdft 8dagftb8atf87abtf8t7
+        </p>
+        <a target="_blank" ref={linkref}>learn react</a>
+        
+        
    
     </>
   );
